@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E8FB3DA220F414EA00338699 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FB3DA120F414EA00338699 /* AppDelegate.m */; };
-		E8FB3DA520F414EA00338699 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FB3DA420F414EA00338699 /* ViewController.m */; };
 		E8FB3DA820F414EA00338699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8FB3DA620F414EA00338699 /* Main.storyboard */; };
 		E8FB3DAA20F414EA00338699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8FB3DA920F414EA00338699 /* Assets.xcassets */; };
 		E8FB3DAD20F414EA00338699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8FB3DAB20F414EA00338699 /* LaunchScreen.storyboard */; };
@@ -19,8 +18,6 @@
 		E8FB3D9D20F414EA00338699 /* FeasoInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeasoInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8FB3DA020F414EA00338699 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8FB3DA120F414EA00338699 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E8FB3DA320F414EA00338699 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E8FB3DA420F414EA00338699 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E8FB3DA720F414EA00338699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8FB3DA920F414EA00338699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8FB3DAC20F414EA00338699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,10 +55,11 @@
 		E8FB3D9F20F414EA00338699 /* FeasoInstagram */ = {
 			isa = PBXGroup;
 			children = (
+				E8FB3DB820F4150F00338699 /* Models */,
+				E8FB3DB720F4150A00338699 /* Views */,
+				E8FB3DB620F4150100338699 /* View Controllers */,
 				E8FB3DA020F414EA00338699 /* AppDelegate.h */,
 				E8FB3DA120F414EA00338699 /* AppDelegate.m */,
-				E8FB3DA320F414EA00338699 /* ViewController.h */,
-				E8FB3DA420F414EA00338699 /* ViewController.m */,
 				E8FB3DA620F414EA00338699 /* Main.storyboard */,
 				E8FB3DA920F414EA00338699 /* Assets.xcassets */,
 				E8FB3DAB20F414EA00338699 /* LaunchScreen.storyboard */,
@@ -69,6 +67,27 @@
 				E8FB3DAF20F414EA00338699 /* main.m */,
 			);
 			path = FeasoInstagram;
+			sourceTree = "<group>";
+		};
+		E8FB3DB620F4150100338699 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E8FB3DB720F4150A00338699 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E8FB3DB820F4150F00338699 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +160,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8FB3DA520F414EA00338699 /* ViewController.m in Sources */,
 				E8FB3DB020F414EA00338699 /* main.m in Sources */,
 				E8FB3DA220F414EA00338699 /* AppDelegate.m in Sources */,
 			);

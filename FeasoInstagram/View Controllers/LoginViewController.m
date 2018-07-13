@@ -18,17 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)registerUser {
     PFUser *newUser = [PFUser user];
-
     newUser.username = self.usernameField.text;
     newUser.password = self.passwordField.text;
 
@@ -104,15 +101,11 @@
 
 
 - (IBAction)didTapSignUp:(id)sender {
-    
     [self registerUser];
-    
-    
 }
 
 - (IBAction)didTapLogin:(id)sender {
     [self loginUser];
-    
 }
 
 /*

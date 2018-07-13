@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimelineViewController : UIViewController 
+@interface TimelineViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 

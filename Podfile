@@ -7,6 +7,7 @@ target 'FeasoInstagram' do
 
   # Pods for FeasoInstagram
   pod 'Parse'
+  pod 'ParseUI'
   pod 'AFNetworking'
 
 end

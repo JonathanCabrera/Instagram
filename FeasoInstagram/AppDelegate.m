@@ -18,13 +18,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-
 
 
     ParseClientConfiguration *configuration = [ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-        configuration.applicationId = @"parseChatID";
-        configuration.server = @"https://blooming-thicket-89345.herokuapp.com/parse";
+        configuration.applicationId = @"feasoFBUAppID";
+        configuration.clientKey = @"feasoFBUMasterKey";
+        configuration.server = @"https://feaso-insta.herokuapp.com/parse";
     }];
     [Parse initializeWithConfiguration:configuration];
 

@@ -45,19 +45,26 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     UIImage *originalImage = info[UIImagePickerControllerEditedImage];
-   
-    [picker dismissViewControllerAnimated:YES completion:^{
-        self.savedImage = originalImage;
-        UIImage *resizedImage = [self resizeImage:self.savedImage withSize:CGSizeMake(200, 200)];
-        self.uploadImage.image = resizedImage;
-    }];
+    self.savedImage = originalImage;
+    UIImage *resizedImage = [self resizeImage:self.savedImage withSize:CGSizeMake(375, 375)];
+    self.uploadImage.image = resizedImage;
     
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+- (IBAction)didTapCancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didTapShare:(id)sender {
-
-    [Post postUserImage:self.uploadImage.image withCaption:self.descriptionTextView.text withCompletion:nil];
-    
+    [Post postUserImage:self.uploadImage.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if(succeeded){
+            [self dismissViewControllerAnimated:YES completion:nil];
+            NSLog(@"successful!");
+        } else {
+            NSLog(@"Didn't work");
+        }
+    }];
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {

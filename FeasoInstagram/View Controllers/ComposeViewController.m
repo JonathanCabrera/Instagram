@@ -57,7 +57,7 @@
 }
 
 - (IBAction)didTapShare:(id)sender {
-    [Post postUserImage:self.uploadImage.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Post postUserImage:self.uploadImage.image withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if(succeeded){
             [self dismissViewControllerAnimated:YES completion:nil];
             NSLog(@"successful!");

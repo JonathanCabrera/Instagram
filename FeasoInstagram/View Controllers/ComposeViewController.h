@@ -12,6 +12,6 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *imageTap;
 @property (strong, nonatomic) IBOutlet UIImageView *uploadImage;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
-@property (weak, nonatomic) IBOutlet UITextField *captionField;
+@property (weak, nonatomic) IBOutlet UITextView *captionTextView;
 
 @end

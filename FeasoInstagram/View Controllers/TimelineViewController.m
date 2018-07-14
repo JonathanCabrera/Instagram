@@ -22,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self getPostData];
+
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -48,10 +49,16 @@
     PFObject *post = self.timelinePosts[indexPath.row];
     PFUser *user = post[@"author"];
     PFFile *imageFile = post[@"image"];
+    NSDate *date = post[@"timeStamp"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+    
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
 
     cell.usernameLabel.text = user.username;
     cell.captionLabel.text = post[@"caption"];
-    //cell.likeCountLabel.text = post[@"likeCount"];
+    cell.dateLabel.text = dateString;
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!data) {
             return NSLog(@"%@", error);
@@ -67,7 +74,11 @@
 }
 
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {
-    
+    [refreshControl endRefreshing];
+    [self getPostData];
+}
+
+- (void)getPostData{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
@@ -79,14 +90,12 @@
         if (posts != nil) {
             self.timelinePosts = posts;
             [self.tableView reloadData];
-            [refreshControl endRefreshing];
-
+            
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
 }
-
 
 
 
